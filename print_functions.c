@@ -28,7 +28,7 @@ int print_char(va_list ap, params_t *params)
  **/
 int print_int(va_list ap, params_t *params)
 {
-	long l;
+	long __attribute__ ((unused)) l;
 
 	if (params->l_modifier)
 		l = va_arg(ap, long);
