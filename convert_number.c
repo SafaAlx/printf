@@ -1,12 +1,12 @@
 #include "main.h"
 
 /**
- *  * print_hex - prints unsigned hex numbers in lowercase
- *   * @ap: The argument pointer
- *    * @params: The parameter structure
- *     *
- *      * Return: bytes printed
- *      */
+ * print_hex - prints unsigned hex numbers in lowercase
+ * @ap: The argument pointer
+ * @params: The parameter structure
+ *
+ * Return: bytes printed
+ */
 int print_hex(va_list ap, params_t *params)
 {
 	    unsigned long l;
@@ -91,7 +91,6 @@ int print_binary(va_list ap, params_t *params)
  *     *
  *      * Return: bytes printed
  *      */
-
 int print_octal(va_list ap, params_t *params)
 {
 	    unsigned long l;
