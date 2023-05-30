@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
  * print_char - prints character
  * @ap: The argument pointer
@@ -12,7 +11,6 @@ int print_char(va_list ap, params_t *params)
 	char pad_char = ' ';
 	unsigned int pad = 1, sum = 0, ch = va_arg(ap, int);
 	if (params->minus_flag)
-
 		sum += _putchar(ch);
 	while (pad++ < params->width)
 		sum += _putchar(pad_char);
@@ -20,15 +18,12 @@ int print_char(va_list ap, params_t *params)
 		sum += _putchar(ch);
 	return (sum);
 }
-
 /**
  * print_int - prints integer
  * @ap: The argument pointer
  * @params: The parameter structure
- *     
  * Return: number integer printed
  **/
-
 int print_int(va_list ap, params_t *params)
 {
 	long l;
@@ -40,7 +35,6 @@ int print_int(va_list ap, params_t *params)
 		l = (int)va_arg(ap, int);
 	return (print_number(convert(1, 10, 0, params), params));
 }
-
 /**
  * print_string - prints a string
  * @ap: The argument pointer
@@ -48,7 +42,6 @@ int print_int(va_list ap, params_t *params)
  *
  * Return: number char printed
  **/
-
 int print_string(va_list ap, params_t *params)
 {
 	char *str = va_arg(ap, char *), pad_char = ' ';
@@ -79,13 +72,11 @@ int print_string(va_list ap, params_t *params)
 		}
 		return (sum);
 }
-
-
 /**
  * print_percent - prints a string
  * @ap: The argument pointer
  * @params: The parameter structure
- *     
+ *
  * Return: number char printed
  **/
 int print_percent(va_list ap, params_t *params)
@@ -94,12 +85,10 @@ int print_percent(va_list ap, params_t *params)
 	(void)params;
 	return (_putchar('%'));
 }
-
 /**
  * print_S - custom format specifier
  * @ap: The argument pointer
  * @params: The parameter structure
- *   
  * Return: number char printed
  **/
 int print_S(va_list ap, params_t *params)
@@ -112,7 +101,7 @@ int print_S(va_list ap, params_t *params)
 	for (; *str; str++)
 		if ((*str > 0 && *str < 32) || *str >= 127)
 		{
-			sum += _putchar('\\') ;
+			sum += _putchar('\\');
 			sum += _putchar('x');
 			hex = convert(*str, 16, 0, params);
 			if (!hex[1])
@@ -125,3 +114,4 @@ int print_S(va_list ap, params_t *params)
 		}
 	return (sum);
 }
+
